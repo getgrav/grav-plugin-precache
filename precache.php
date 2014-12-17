@@ -1,4 +1,5 @@
-<?php namespace Grav\Plugin;
+<?php
+namespace Grav\Plugin;
 
 use \Grav\Common\Plugin;
 
@@ -50,6 +51,8 @@ class PreCachePlugin extends Plugin
             $routes = $pages->routes();
 
             foreach ($routes as $route => $path) {
+                // Log our progress
+                $this->grav['log']->addWarning('precache: '.$route);
                 try {
                     $page = $pages->get($path);
                     // call the content to load/cache it
