@@ -1,0 +1,2 @@
+enabled: true                   # set to false to disable this plugin completely
+enabled_admin:  true            # set to false to disable precache for the admin plugin
