@@ -6,10 +6,10 @@ author:
   name: Team Grav
   email: devs@getgrav.org
   url: http://getgrav.org
-homepage: https://github.com/getgrav/grav-plugin-relatedpages
+homepage: https://github.com/getgrav/grav-plugin-precache
 demo: http://learn.getgrav.org
-keywords: related, plugin
-bugs: https://github.com/getgrav/grav-plugin-relatedpages/issues
+keywords: "precache, plugin"
+bugs: https://github.com/getgrav/grav-plugin-precache/issues
 license: MIT
 
 form:
