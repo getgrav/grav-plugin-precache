@@ -24,7 +24,7 @@ class PreCachePlugin extends Plugin
     {
         $config = $this->grav['config']->get('plugins.precache');
 
-        if (!$config['enabled_admin'] || $this->isAdmin()) {
+        if (!$config['enabled_admin'] && $this->isAdmin()) {
             $this->active = false;
             return;
         }
