@@ -1,12 +1,6 @@
-<?php
-namespace Grav\Plugin;
+<?php namespace Grav\Plugin;
 
 use \Grav\Common\Plugin;
-use \Grav\Common\Grav;
-use \Grav\Common\Cache;
-use \Grav\Common\Config\Config;
-use \Grav\Common\Page\Page;
-use \Grav\Common\Page\Pages;
 
 class PreCachePlugin extends Plugin
 {
