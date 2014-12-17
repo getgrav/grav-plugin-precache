@@ -2,11 +2,6 @@
 namespace Grav\Plugin;
 
 use \Grav\Common\Plugin;
-use \Grav\Common\Grav;
-use \Grav\Common\Cache;
-use \Grav\Common\Config\Config;
-use \Grav\Common\Page\Page;
-use \Grav\Common\Page\Pages;
 
 class PreCachePlugin extends Plugin
 {
@@ -30,7 +25,7 @@ class PreCachePlugin extends Plugin
     {
         $config = $this->grav['config']->get('plugins.precache');
 
-        if (!$config['enabled_admin'] || $this->isAdmin()) {
+        if (!$config['enabled_admin'] && $this->isAdmin()) {
             $this->active = false;
             return;
         }
@@ -56,6 +51,8 @@ class PreCachePlugin extends Plugin
             $routes = $pages->routes();
 
             foreach ($routes as $route => $path) {
+                // Log our progress
+                $this->grav['log']->addWarning('precache: '.$route);
                 try {
                     $page = $pages->get($path);
                     // call the content to load/cache it
