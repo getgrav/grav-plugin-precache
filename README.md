@@ -1,2 +1,2 @@
-grav-plugin-precahe
-===================
+grav-plugin-precache
+====================
