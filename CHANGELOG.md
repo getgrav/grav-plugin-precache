@@ -1,3 +1,9 @@
+# v1.1.1
+## 01/15/2016
+
+1. [](#new)
+    * Updated blueprints and README.md
+
 # v1.1.0
 ## 01/15/2016
 
