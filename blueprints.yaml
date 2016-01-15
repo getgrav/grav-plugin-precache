@@ -1,5 +1,5 @@
 name: PreCache
-version: 1.1.0
+version: 1.1.1
 description: "PreCache is a simple Grav plugin that uses Grav's powerful `onShutdown` event to run through all pages and call the `content()` method of each page"
 icon: fighter-jet
 author:
@@ -26,12 +26,23 @@ form:
         type: bool
 
     enabled_admin:
-          type: toggle
-          label: Plugin Status
-          highlight: 1
-          default: 1
-          options:
-            1: Enabled
-            0: Disabled
-          validate:
-            type: bool
+      type: toggle
+      label: Plugin Status
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    log_pages:
+      type: toggle
+      label: Log Cached Pages
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool    

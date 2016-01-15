@@ -30,5 +30,24 @@ The default configuration provided in the `user/plugins/precache.yaml` file cont
 ```
 enabled: true                   # set to false to disable this plugin completely
 enabled_admin:  true            # set to false to disable precache for the admin plugin
+log_pages: true                 # log cached pages to grav.log
 ```
+
+By default the PreCache plugin will log every file to the `logs/grav.log` file.  You can turn this off with the `log_pages` setting.
+
+# CLI Usage
+
+With regular usage, the precache plugin works utilizing the  =`onShutdown` event to ensure our site performance is not effected by the out-of-process functionality that loops over all your pages to cache their contents.  However, there are times when you don't want to wait for that first hit, and you want to kick this process off yourself.  Perhaps you want to perform this after doing an update, or perhaps it's something you want to script.  You can now achieve this via the CLI command.  To use this simply enter the following in your terminal:
+
+```
+$ bin/plugin precache url <YOUR_URL>
+```
+
+So for example it could be something like:
+
+```
+$ bin/plugin precache url https://getgrav.org/
+```
+
+This will simply make a call to your webserver for you and kick off the PreCache functionality.
 
