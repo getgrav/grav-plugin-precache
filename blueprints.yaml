@@ -16,7 +16,7 @@ form:
   fields:
     enabled:
       type: toggle
-      label: Plugin Status
+      label: Plugin status
       highlight: 1
       default: 1
       options:
@@ -27,7 +27,7 @@ form:
 
     enabled_admin:
       type: toggle
-      label: Plugin Status
+      label: Admin enabled
       highlight: 1
       default: 1
       options:
@@ -38,7 +38,7 @@ form:
 
     log_pages:
       type: toggle
-      label: Log Cached Pages
+      label: Log cached pages
       highlight: 1
       default: 1
       options:
