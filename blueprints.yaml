@@ -38,7 +38,7 @@ form:
 
     log_pages:
       type: toggle
-      label: Log Cached Pages
+      label: Log cached pages
       highlight: 1
       default: 1
       options:
