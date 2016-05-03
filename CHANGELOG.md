@@ -1,8 +1,8 @@
 # v1.1.2
-## xx/xx/2016
+## 05/03/2016
 
 1. [](#bugfix)
-    * Fixed bad label resulting in double "Plugin Status" 
+    * Fixed bad label resulting in double "Plugin Status" labels 
 
 # v1.1.1
 ## 01/15/2016
