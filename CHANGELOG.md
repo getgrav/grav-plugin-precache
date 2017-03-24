@@ -1,3 +1,9 @@
+# v1.1.3
+## 03/24/2017
+
+1. [](#bugfix)
+    * Force rebuild and re-release 
+
 # v1.1.2
 ## 05/03/2016
 
