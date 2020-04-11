@@ -69,6 +69,8 @@ class PreCachePlugin extends Plugin
 
                 try {
                     $page = $pages->get($path);
+                    $this->grav['page'] = $page;
+                    
                     // call the content to load/cache it
                     $page->content();
                 } catch (\Exception $e) {
