@@ -1,3 +1,10 @@
+# v1.2.0
+## 04/27/2020
+
+1. [](#improved)
+    * Use `info` instead of `warning` when logging [#5](https://github.com/getgrav/grav-plugin-precache/pull/5)
+    * Set current page in Grav object [#8](https://github.com/getgrav/grav-plugin-precache/pull/8)
+
 # v1.1.3
 ## 03/24/2017
 
