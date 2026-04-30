@@ -64,7 +64,7 @@ class PreCachePlugin extends Plugin
             foreach ($routes as $route => $path) {
                 // Log our progress
                 if ($log_pages) {
-                    $this->grav['log']->addInfo('precache: '.$route);
+                    $this->grav['log']->info('precache: '.$route);
                 }
 
                 try {
