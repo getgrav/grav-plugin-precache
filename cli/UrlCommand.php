@@ -68,7 +68,7 @@ class UrlCommand extends ConsoleCommand
     private function getData($url) {
 
         // force a trailing slash if there is none
-        $url = rtrim($url, '/') . '/';
+        $url = rtrim((string) $url, '/') . '/';
 
         $ch = curl_init();
         $timeout = 30;
