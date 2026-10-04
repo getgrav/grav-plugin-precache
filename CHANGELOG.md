@@ -1,3 +1,7 @@
+## 10/04/2026
+1. [](#bugfix)
+    * Acquire the precache guard before rendering pages, so an aborted run (exit, timeout, FPM request timeout) no longer causes a full re-render on every request.
+
 # v1.2.1
 ## 04/30/2026
 
