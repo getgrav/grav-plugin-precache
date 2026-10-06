@@ -48,12 +48,11 @@ class PreCachePlugin extends Plugin
 
         if (!$precached) {
 
-            // Acquire the guard *before* doing any work. If a page render
-            // aborts the request (exit, timeout, or a FPM request timeout),
-            // the old code never reached the save() at the end, so the next
-            // request started over again and the site could re-render every
-            // page on every hit. It also acts as a lock so parallel requests
-            // don't all start a full run.
+            // Mark the run as started before any page is rendered. A render that
+            // ends the request (exit, fatal error, FPM request_terminate_timeout)
+            // never reaches the end of this loop, and a guard saved only there
+            // would make every following request start the whole run again.
+            // Best effort rather than a strict lock: fetch() and save() are not atomic.
             $cache->save($cache_id, true);
 
             $log_pages = $this->config->get('plugins.precache.log_pages', true);

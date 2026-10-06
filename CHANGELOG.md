@@ -1,6 +1,8 @@
-## 10/04/2026
+# v1.2.2
+## 10/06/2026
+
 1. [](#bugfix)
-    * Acquire the precache guard before rendering pages, so an aborted run (exit, timeout, FPM request timeout) no longer causes a full re-render on every request.
+    * Fixed every request re-caching all pages after a precache run was cut short by a timeout or an exit. Thanks @kromonos [#9](https://github.com/getgrav/grav-plugin-precache/pull/9)
 
 # v1.2.1
 ## 04/30/2026
