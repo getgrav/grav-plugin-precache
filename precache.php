@@ -48,6 +48,13 @@ class PreCachePlugin extends Plugin
 
         if (!$precached) {
 
+            // Mark the run as started before any page is rendered. A render that
+            // ends the request (exit, fatal error, FPM request_terminate_timeout)
+            // never reaches the end of this loop, and a guard saved only there
+            // would make every following request start the whole run again.
+            // Best effort rather than a strict lock: fetch() and save() are not atomic.
+            $cache->save($cache_id, true);
+
             $log_pages = $this->config->get('plugins.precache.log_pages', true);
 
             // check if this function is available, if so use it to stop any timeouts
@@ -78,8 +85,6 @@ class PreCachePlugin extends Plugin
                     // do nothing on error
                 }
             }
-
-            $cache->save($cache_id, true);
         }
     }
 }
