@@ -1,5 +1,5 @@
 # v1.2.3
-## 10/27/2026
+## 10/29/2026
 
 1. [](#bugfix)
     * Precaching now works when the cache is cleared from Admin2 or the API, where it previously cached nothing or stopped at the first page that needed Twig ([page-toc#50](https://github.com/trilbymedia/grav-plugin-page-toc/issues/50))
