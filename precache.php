@@ -64,8 +64,13 @@ class PreCachePlugin extends Plugin
                 }
             } catch (\Exception $e) {}
 
+            // An API request (an Admin2 cache clear) or other non-page request can end
+            // up here without the page index or Twig set up, so set both up the same
+            // way a page request would before rendering anything.
             /** @var Pages $pages */
             $pages = $this->grav['pages'];
+            $pages->enablePages();
+            $this->grav['twig']->init();
             $routes = $pages->routes();
 
             foreach ($routes as $route => $path) {
@@ -81,8 +86,8 @@ class PreCachePlugin extends Plugin
                     
                     // call the content to load/cache it
                     $page->content();
-                } catch (\Exception $e) {
-                    // do nothing on error
+                } catch (\Throwable $e) {
+                    // do nothing on error, so one broken page doesn't stop the run
                 }
             }
         }
